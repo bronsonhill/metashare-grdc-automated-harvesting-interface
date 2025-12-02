@@ -29,7 +29,18 @@ class GeoNetworkConnector(ConnectorInterface):
         })
 
     def connect(self):
-        pass
+        """
+        Test connection to the GeoNetwork API using the site endpoint.
+        """
+        try:
+            url = self.url.rstrip('/') + '/' + self.source_config.test_endpoint.lstrip('/')
+            response = self.session.get(url)
+            response.raise_for_status()
+            print(f"Successfully connected to GeoNetwork: {response.json().get('name', 'Unknown Site')}")
+            return True
+        except requests.exceptions.RequestException as e:
+            print(f"Failed to connect to GeoNetwork: {e}")
+            return False
 
     def search(self, query):
         try:
@@ -145,5 +156,8 @@ if __name__ == "__main__":
     config_loader = ConfigLoader()
     source_config = config_loader.get_source_config()
     connector = GeoNetworkConnector(source_config)
-    results = connector.search(connector.construct_query(datetime.now(timezone.utc) - timedelta(days=3))) 
+    if connector.connect():
+        results = connector.search(connector.construct_query(datetime.now(timezone.utc) - timedelta(days=3))) 
+    else:
+        print("Connection failed, skipping search.") 
     # json.dump(results, open("results.json", "w"), indent=4)

@@ -16,7 +16,7 @@ class NotificationsConfig:
     destination: List[str]
     client_id: str
     client_secret: str
-    
+    test_endpoint: str
 
 class ConfigLoader:
     def __init__(self, config_path: str = "config.toml"):
@@ -42,5 +42,6 @@ class ConfigLoader:
             channel=notifications_section.get("channel", "email"),
             destination=notifications_section.get("destination", []),
             client_id=notifications_section.get("client_id", ""),
-            client_secret=notifications_section.get("client_secret", "")
+            client_secret=notifications_section.get("client_secret", ""),
+            test_endpoint=notifications_section.get("test_endpoint", "")
         )
