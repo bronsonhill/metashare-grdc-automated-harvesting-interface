@@ -2,6 +2,7 @@ import requests
 from datetime import datetime, timedelta, timezone
 from typing import Dict, Any
 from abc import ABC, abstractmethod
+import json
 
 class ConnectorInterface(ABC):
     @abstractmethod
@@ -42,49 +43,68 @@ class GeoNetworkConnector(ConnectorInterface):
             raise Exception(f"Error searching for {query}: {e}")
 
     def construct_query(self, since):
-
+        # Initialize with a basic bool query structure that matches all documents
         query_body: Dict[str, Any] = {
             "query": {
-                "match_all": {}
+                "bool": {
+                    "must": [{"match_all": {}}],
+                    "filter": []
+                }
             },
             "size": self.source_config.maxRecords,
         }
 
         # Add date range filter if 'since' is provided
         if since:
-            # Assuming 'changeDate' is the field for modification time in GeoNetwork/ES
-            # Adjust field name if necessary based on specific GeoNetwork schema
-            # Ensure we use a format compatible with the server, isoformat() usually works well.
-            # If since is timezone aware, it includes offset.
-            query_body["query"] = {
-                "bool": {
-                    "must": [{"match_all": {}}],
-                    "filter": [
-                        {
-                            "bool": {
-                                "should": [
-                                    {
-                                        "range": {
-                                            "changeDate": {
-                                                "gt": since.isoformat().replace("+00:00", "Z") if since.tzinfo == timezone.utc else since.isoformat()
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "range": {
-                                            "createDate": {
-                                                "gt": since.isoformat().replace("+00:00", "Z") if since.tzinfo == timezone.utc else since.isoformat()
-                                            }
-                                        }
-                                    }
-                                ],
-                                "minimum_should_match": 1
-                            }
-                        }
-                    ]
+            # Format date string
+            date_str = since.isoformat().replace("+00:00", "Z") if since.tzinfo == timezone.utc else since.isoformat()
+            
+            date_should_clauses = []
+            
+            # Add changeDate range
+            date_should_clauses.append({
+                "range": {
+                    "changeDate": {
+                        "gt": date_str
+                    }
                 }
-            }
+            })
+            
+            # Add createDate range
+            date_should_clauses.append({
+                "range": {
+                    "createDate": {
+                        "gt": date_str
+                    }
+                }
+            })
+            
+            # Add the date filter with minimum_should_match
+            query_body["query"]["bool"]["filter"].append({
+                "bool": {
+                    "should": date_should_clauses,
+                    "minimum_should_match": 1
+                }
+            })
         
+        # filter contact for resource email for containing grdc; must specify which role they may have
+        # query_body["query"]["bool"]["filter"].append(
+        #     {
+        #         "wildcard": {
+        #             "ownerForResource.email": "*grdc*"
+        #         }
+        #     }
+        # )
+
+        # filter for contract code in purpose element; must specify the format of the contract code ? No 
+        # query_body["query"]["bool"]["filter"].append(
+        #     {
+        #         "wildcard": {
+        #             "purpose": "*grdc*"
+        #         }
+        #     }
+        # )
+
         return query_body
 
     def _filter_results(self, results):
@@ -110,12 +130,14 @@ class GeoNetworkConnector(ConnectorInterface):
         return self._is_grdc_contact(result) or self._is_grdc_contract_code(result) or self._is_grdc_owner(result)
 
     def _is_grdc_contact(self, result):
+        # covered by _containts_grdc
         return "grdc" in result.get("contact", "")
 
     def _is_grdc_contract_code(self, result):
         pass
 
     def _is_grdc_owner(self, result):
+        # covered by _containts_grdc
         pass
 
 
@@ -123,5 +145,5 @@ if __name__ == "__main__":
     config_loader = ConfigLoader()
     source_config = config_loader.get_source_config()
     connector = GeoNetworkConnector(source_config)
-    results = connector.search(connector.construct_query(datetime.now(timezone.utc) - timedelta(days=14))) 
-    filtered_results = connector.filter_results(results)
+    results = connector.search(connector.construct_query(datetime.now(timezone.utc) - timedelta(days=3))) 
+    # json.dump(results, open("results.json", "w"), indent=4)
