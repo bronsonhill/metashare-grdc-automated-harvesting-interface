@@ -6,6 +6,7 @@ from dataclasses import dataclass, field
 class SourceConfig:
     url: str
     search_endpoint: str
+    get_record_endpoint: str
     test_endpoint: str
     maxRecords: int = 100
     grdc_filter_keywords: List[str] = field(default_factory=list)
@@ -31,6 +32,7 @@ class ConfigLoader:
         return SourceConfig(
             url=connect_section.get("url", ""),
             search_endpoint=connect_section.get("search_endpoint", ""),
+            get_record_endpoint=connect_section.get("get_record_endpoint", ""),
             maxRecords=connect_section.get("maxRecords", 100),
             test_endpoint=connect_section.get("test_endpoint", ""),
             grdc_filter_keywords=connect_section.get("grdc_filter_keywords", [])
