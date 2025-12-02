@@ -4,3 +4,7 @@
 # Configuration files
 config.toml
 
+test/notifications
+
+
+*.DS_Store

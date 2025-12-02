@@ -51,7 +51,7 @@ class GeoNetworkConnector(ConnectorInterface):
 
             hits = response.json()['hits']['hits']
             self.hit_count = len(hits)
-            
+
             filtered_hits = self._filter_results(hits)
             self.filtered_count = len(filtered_hits)
 
