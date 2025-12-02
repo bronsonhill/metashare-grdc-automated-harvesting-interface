@@ -13,6 +13,10 @@ class ConnectorInterface(ABC):
     def search(self, query):
         pass
 
+    @abstractmethod
+    def get_record(self, uuid):
+        pass
+
 
 from config_loader import ConfigLoader, SourceConfig
 
@@ -58,6 +62,15 @@ class GeoNetworkConnector(ConnectorInterface):
             return filtered_hits
         except requests.exceptions.RequestException as e:
             raise Exception(f"Error searching for {query}: {e}")
+
+    def get_record(self, uuid):
+        try:
+            url = self.url.rstrip('/') + '/' + self.source_config.get_record_endpoint.lstrip('/') + '/' + uuid
+            response = self.session.get(url)
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            raise Exception(f"Error getting record {uuid}: {e}")
 
     def construct_query(self, since):
         # Initialize with a basic bool query structure that matches all documents
@@ -159,11 +172,9 @@ class GeoNetworkConnector(ConnectorInterface):
 
 
 # if __name__ == "__main__":
-#     config_loader = ConfigLoader()
+#     test get record with uuid e1331a40-cd41-4506-acfe-dc4bdeee6275
+#     config_loader = ConfigLoader("config_dev.toml")
 #     source_config = config_loader.get_source_config()
 #     connector = GeoNetworkConnector(source_config)
-#     if connector.connect():
-#         results = connector.search(connector.construct_query(datetime.now(timezone.utc) - timedelta(days=3))) 
-#     else:
-#         print("Connection failed, skipping search.") 
-    # json.dump(results, open("results.json", "w"), indent=4)
+#     record = connector.get_record("ec3d3fc7-89a0-44ad-948a-c3595bf50c8a")
+#     print(record)
