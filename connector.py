@@ -6,7 +6,7 @@ import json
 
 class ConnectorInterface(ABC):
     @abstractmethod
-    def connect(self):
+    def can_connect(self):
         pass
 
     @abstractmethod
@@ -27,8 +27,10 @@ class GeoNetworkConnector(ConnectorInterface):
             "Content-Type": "application/json",
             "Accept": "application/json"
         })
+        self.hit_count = 0
+        self.filtered_count = 0
 
-    def connect(self):
+    def can_connect(self):
         """
         Test connection to the GeoNetwork API using the site endpoint.
         """
@@ -36,7 +38,6 @@ class GeoNetworkConnector(ConnectorInterface):
             url = self.url.rstrip('/') + '/' + self.source_config.test_endpoint.lstrip('/')
             response = self.session.get(url)
             response.raise_for_status()
-            print(f"Successfully connected to GeoNetwork: {response.json().get('name', 'Unknown Site')}")
             return True
         except requests.exceptions.RequestException as e:
             print(f"Failed to connect to GeoNetwork: {e}")
@@ -47,9 +48,14 @@ class GeoNetworkConnector(ConnectorInterface):
             url = self.url.rstrip('/') + '/' + self.search_endpoint.lstrip('/')
             response = self.session.post(url, json=query)
             response.raise_for_status()
+
             hits = response.json()['hits']['hits']
-            print(f"Number of hits: {len(hits)}")
-            return self._filter_results(hits)
+            self.hit_count = len(hits)
+            
+            filtered_hits = self._filter_results(hits)
+            self.filtered_count = len(filtered_hits)
+
+            return filtered_hits
         except requests.exceptions.RequestException as e:
             raise Exception(f"Error searching for {query}: {e}")
 
@@ -152,12 +158,12 @@ class GeoNetworkConnector(ConnectorInterface):
         pass
 
 
-if __name__ == "__main__":
-    config_loader = ConfigLoader()
-    source_config = config_loader.get_source_config()
-    connector = GeoNetworkConnector(source_config)
-    if connector.connect():
-        results = connector.search(connector.construct_query(datetime.now(timezone.utc) - timedelta(days=3))) 
-    else:
-        print("Connection failed, skipping search.") 
+# if __name__ == "__main__":
+#     config_loader = ConfigLoader()
+#     source_config = config_loader.get_source_config()
+#     connector = GeoNetworkConnector(source_config)
+#     if connector.connect():
+#         results = connector.search(connector.construct_query(datetime.now(timezone.utc) - timedelta(days=3))) 
+#     else:
+#         print("Connection failed, skipping search.") 
     # json.dump(results, open("results.json", "w"), indent=4)
