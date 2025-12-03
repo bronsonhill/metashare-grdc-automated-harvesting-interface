@@ -53,7 +53,7 @@ class GeoNetworkConnector(ConnectorInterface):
         })
 
         json_records = self._search_records_json(query)
-        uuids = self._get_uuids_record_json(json_records)
+        uuids = self._get_uuids_from_records(json_records)
         xml_records = self._get_records_xml(uuids)
         return xml_records
         
@@ -151,7 +151,6 @@ class GeoNetworkConnector(ConnectorInterface):
             self.hit_count = len(hits)
 
             filtered_hits = self._filter_results(hits)
-            self.filtered_count = len(filtered_hits)
 
             return filtered_hits
         except requests.exceptions.RequestException as e:
@@ -160,14 +159,14 @@ class GeoNetworkConnector(ConnectorInterface):
     def _get_records_xml(self, uuids):
         records = []
         for uuid in uuids:
-            record = self.get_xml_record(uuid)
+            record = self.get_record(uuid)
             records.append(record)
         return records
 
-    def _get_uuids_record_json(self, json_records):
+    def _get_uuids_from_records(self, json_records):
         uuids = []
         for record in json_records:
-            uuids.append(record['uuid'])
+            uuids.append(record['_source']['uuid'])
         return uuids
 
     def _filter_results(self, results):
@@ -177,7 +176,9 @@ class GeoNetworkConnector(ConnectorInterface):
         for result in results:
             if self._containts_grdc(result, keywords) or self._is_grdc_metadata(result):
                 filtered_results.append(result)
-        print("Filtered hits: ", len(filtered_results))
+
+        self.filtered_count = len(filtered_results)
+
         return filtered_results
 
     def _containts_grdc(self, result, keywords):
