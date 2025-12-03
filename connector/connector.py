@@ -22,10 +22,10 @@ from config import ConfigLoader, SourceConfig
 
 
 class GeoNetworkConnector(ConnectorInterface):
-    def __init__(self, source_config: SourceConfig):
-        self.source_config = source_config
-        self.url = source_config.url
-        self.search_endpoint = source_config.search_endpoint
+    def __init__(self):
+        self.source_config = ConfigLoader().source_config
+        self.url = self.source_config.url
+        self.search_endpoint = self.source_config.search_endpoint
         self.session = requests.Session()
         self.session.headers.update({
             "Content-Type": "application/json",
@@ -208,5 +208,5 @@ class GeoNetworkConnector(ConnectorInterface):
 # if __name__ == "__main__":
     # test search
     # config_loader = ConfigLoader("config_dev.toml")
-    # source_config = config_loader.get_source_config()
+    # source_config = config_loader.source_config
     # connector = GeoNetworkConnector(source_config)

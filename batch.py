@@ -26,7 +26,7 @@ class BatchJob:
         return self.search_hits
 
     def _set_since(self):
-        # temporary; will retrieve state from database
+        # temporary implementation - should retrieve state from database
         return datetime.now(timezone.utc) - timedelta(days=7)
 
     def _log_state(self):
@@ -35,11 +35,11 @@ class BatchJob:
 
 
 if __name__ == "__main__":
+    # Initialize ConfigLoader (singleton)
     config_loader = ConfigLoader("config/config_dev.toml")
-    source_config = config_loader.get_source_config()
-    notifications_config = config_loader.get_notifications_config()
-    connector = GeoNetworkConnector(source_config)
+    
+    connector = GeoNetworkConnector()
     notifications_backend = FileNotificationBackend()
-    notifications = NotificationService(notifications_config, notifications_backend)
+    notifications = NotificationService(notifications_backend)
     batch_job = BatchJob(connector, notifications)
     batch_job.run()

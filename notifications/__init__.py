@@ -1,1 +1,1 @@
-from .notifications import NotificationService, FileNotificationBackend, EmailNotificationBackend
+from .notifications import NotificationService, FileNotificationBackend, EmailNotificationMicrosoftBackend as EmailNotificationBackend

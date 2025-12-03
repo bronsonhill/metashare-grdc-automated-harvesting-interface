@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from typing import Optional
 import os
 import datetime
-from config import NotificationsConfig
+from config import NotificationsConfig, ConfigLoader
 
 
 @dataclass
@@ -47,8 +47,8 @@ class EmailNotificationMicrosoftBackend(NotificationBackend):
 
 
 class NotificationService:
-    def __init__(self, config: NotificationsConfig, backend: NotificationBackend):
-        self.config = config
+    def __init__(self, backend: NotificationBackend):
+        self.config = ConfigLoader().notifications_config
         self.backend = backend
 
     def notify_connection_error(self, error_message: str):

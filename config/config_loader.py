@@ -23,15 +23,27 @@ class ValidatorConfig:
     valid_resource_types: List[str]
 
 class ConfigLoader:
+    _instance = None
+    _initialized = False
+
+    def __new__(cls, config_path: str = "config/config.toml"):
+        if cls._instance is None:
+            cls._instance = super(ConfigLoader, cls).__new__(cls)
+        return cls._instance
+
     def __init__(self, config_path: str = "config/config.toml"):
-        self.config_path = config_path
-        self._config = self._load_config()
+        if not self._initialized:
+            self.config_path = config_path
+            self._config = self._load_config()
+            self.source_config = self._load_source_config()
+            self.notifications_config = self._load_notifications_config()
+            self._initialized = True
 
     def _load_config(self) -> Dict[str, Any]:
         with open(self.config_path, "rb") as f:
             return tomllib.load(f)
 
-    def get_source_config(self) -> SourceConfig:
+    def _load_source_config(self) -> SourceConfig:
         connect_section = self._config.get("source", {})
         return SourceConfig(
             url=connect_section.get("url", ""),
@@ -42,7 +54,7 @@ class ConfigLoader:
             grdc_filter_keywords=connect_section.get("grdc_filter_keywords", [])
         )
     
-    def get_notifications_config(self) -> NotificationsConfig:
+    def _load_notifications_config(self) -> NotificationsConfig:
         notifications_section = self._config.get("notifications", {})
         return NotificationsConfig(
             channel=notifications_section.get("channel", "email"),
