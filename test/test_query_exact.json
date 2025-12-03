@@ -1,0 +1,19 @@
+{
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "match_all": {}
+                }
+            ],
+            "filter": [
+                {
+                    "term": {
+                        "contactForResource.email": "data.requests@agriculture.vic.gov.au"
+                    }
+                }
+            ]
+        }
+    },
+    "size": 50
+}

@@ -1,0 +1,986 @@
+[
+    {
+        "_index": "gn-records",
+        "_type": "_doc",
+        "_id": "d757f6e0-6f0a-46d3-859b-6aec5be0ea98",
+        "_score": 1.0,
+        "_source": {
+            "docType": "metadata",
+            "document": "",
+            "metadataIdentifier": "d757f6e0-6f0a-46d3-859b-6aec5be0ea98",
+            "standardNameObject": {
+                "default": "ISO 19115-3:2018",
+                "lang": "ISO 19115-3:2018"
+            },
+            "indexingDate": "2025-11-26T22:44:46.384Z",
+            "dateStamp": "2025-11-18T04:17:06.369Z",
+            "mainLanguage": "",
+            "resourceType": [
+                "dataset"
+            ],
+            "OrgObject": {
+                "default": "DEECA",
+                "lang": "DEECA"
+            },
+            "processorOrgObject": {
+                "default": "DEECA",
+                "lang": "DEECA"
+            },
+            "contact": [],
+            "cl_resourceScope": [
+                {
+                    "key": "dataset",
+                    "default": "dataset",
+                    "lang": "dataset",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_ScopeCode"
+                }
+            ],
+            "cl_function": [
+                {
+                    "key": "completeMetadata",
+                    "default": "completeMetadata",
+                    "lang": "completeMetadata",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#CI_OnLineFunctionCode"
+                }
+            ],
+            "cl_status": [
+                {
+                    "key": "completed",
+                    "default": "completed",
+                    "lang": "completed",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_ProgressCode"
+                }
+            ],
+            "cl_spatialRepresentationType": [
+                {
+                    "key": "vector",
+                    "default": "vector",
+                    "lang": "vector",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            ],
+            "cl_type": [
+                {
+                    "key": "discipline",
+                    "default": "discipline",
+                    "lang": "discipline",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_KeywordTypeCode"
+                }
+            ],
+            "cl_classification": [
+                {
+                    "key": "restricted",
+                    "default": "restricted",
+                    "lang": "restricted",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_ClassificationCode"
+                }
+            ],
+            "resourceTitleObject": {
+                "default": "Test restricted restricted",
+                "lang": "Test restricted restricted"
+            },
+            "resourceAltTitleObject": [
+                {
+                    "default": "datashare2840",
+                    "lang": "datashare2840"
+                }
+            ],
+            "resourceAbstractObject": {
+                "default": "*Provide full description of project, including details about the collection or dataset that would enable someone to use the data, without contacting the original researchers for further information.*",
+                "lang": "*Provide full description of project, including details about the collection or dataset that would enable someone to use the data, without contacting the original researchers for further information.*"
+            },
+            "cl_resourceCharacterSet": [
+                {
+                    "key": "utf8",
+                    "default": "utf8",
+                    "lang": "utf8",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_CharacterSetCode"
+                }
+            ],
+            "OrgForResourceObject": {
+                "default": "Agriculture Victoria",
+                "lang": "Agriculture Victoria"
+            },
+            "pointOfContactOrgForResourceObject": {
+                "default": "Agriculture Victoria",
+                "lang": "Agriculture Victoria"
+            },
+            "contactForResource": [
+                {
+                    "organisationObject": {
+                        "default": "Agriculture Victoria",
+                        "lang": "Agriculture Victoria"
+                    },
+                    "role": "pointOfContact",
+                    "email": "avr.contracts@agriculture.vic.gov.au",
+                    "website": "https://ror.org/01mqx8q10",
+                    "logo": "",
+                    "individual": "",
+                    "position": "",
+                    "phone": "",
+                    "address": ""
+                }
+            ],
+            "resourceCreditObject": [
+                {
+                    "default": "*Provide citation(s) for any published references directly relevant, e.g. authors, title, pages, publisher, year published*",
+                    "lang": "*Provide citation(s) for any published references directly relevant, e.g. authors, title, pages, publisher, year published*"
+                },
+                {
+                    "default": "*Add as many credits as needed by clicking the '+' sign below*",
+                    "lang": "*Add as many credits as needed by clicking the '+' sign below*"
+                }
+            ],
+            "supplementalInformationObject": {
+                "default": "*Information about where the resource/data described in this metadata record is stored. Options are (Delete all that don't apply; Network = G drive):*\n \nBASC\nNetwork\nSharePoint\nDEECA Datashare\nOther: *provide as detailed information as possible*",
+                "lang": "*Information about where the resource/data described in this metadata record is stored. Options are (Delete all that don't apply; Network = G drive):*\n \nBASC\nNetwork\nSharePoint\nDEECA Datashare\nOther: *provide as detailed information as possible*"
+            },
+            "purposeObject": {
+                "default": "*In this field, please provide the GRDC contract code (if applicable) and project title*",
+                "lang": "*In this field, please provide the GRDC contract code (if applicable) and project title*"
+            },
+            "hasOverview": "false",
+            "resourceLanguage": [
+                "eng"
+            ],
+            "tag": [
+                {
+                    "default": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*",
+                    "lang": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*"
+                },
+                {
+                    "default": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*",
+                    "lang": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*"
+                }
+            ],
+            "tagNumber": "2",
+            "isOpenData": "false",
+            "keywordType-discipline": [
+                {
+                    "default": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*",
+                    "lang": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*"
+                }
+            ],
+            "keywordType-place": [
+                {
+                    "default": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*",
+                    "lang": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*"
+                }
+            ],
+            "th_otherKeywords-disciplineNumber": "1",
+            "th_otherKeywords-discipline": [
+                {
+                    "default": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*",
+                    "lang": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*"
+                }
+            ],
+            "allKeywords": {
+                "th_otherKeywords-discipline": {
+                    "title": "otherKeywords-discipline",
+                    "theme": "discipline",
+                    "keywords": [
+                        {
+                            "default": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*",
+                            "lang": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*"
+                        }
+                    ]
+                }
+            },
+            "spatialRepresentationType": "vector",
+            "MD_SecurityConstraintsUseLimitationObject": [
+                {
+                    "default": "* Describe the restrictions or constraints that exist on the use of the research data, e.g. timed embargoes or other conditions.\n\nChose one of only these options from the drop-down list below: 'Unclassified', 'Restricted' or 'Sensitive but unclassified' *",
+                    "lang": "* Describe the restrictions or constraints that exist on the use of the research data, e.g. timed embargoes or other conditions.\n\nChose one of only these options from the drop-down list below: 'Unclassified', 'Restricted' or 'Sensitive but unclassified' *"
+                }
+            ],
+            "indexingErrorMsg": [
+                "Warning / Field resourceTemporalDateRange / Lower and upper bounds empty. Date range not indexed."
+            ],
+            "coordinateSystem": [
+                "WGS84 (EPSG:4326)"
+            ],
+            "crsDetails": [
+                {
+                    "code": "WGS84 (EPSG:4326)",
+                    "codeSpace": "EPSG",
+                    "name": "WGS84 (EPSG:4326)",
+                    "url": ""
+                }
+            ],
+            "featureTypes": [],
+            "lineageObject": {
+                "default": "*A general statement about the lineage / history of the data, e.g. connections to other datasets*",
+                "lang": "*A general statement about the lineage / history of the data, e.g. connections to other datasets*"
+            },
+            "sourceDescriptionObject": [
+                {
+                    "default": "*A statement about the source datasets (there may be multiple data sources) used to create the representation*",
+                    "lang": "*A statement about the source datasets (there may be multiple data sources) used to create the representation*"
+                }
+            ],
+            "format": [
+                "DIGITAL - All major formats available"
+            ],
+            "metadataClassification": "restricted",
+            "resClassification": "restricted",
+            "resOwner": "Agriculture Victoria",
+            "recordGroup": "d757f6e0-6f0a-46d3-859b-6aec5be0ea98",
+            "recordOwner": "Naveen Valluri_admin",
+            "uuid": "d757f6e0-6f0a-46d3-859b-6aec5be0ea98",
+            "displayOrder": "0",
+            "groupPublishedId": [
+                "14974",
+                "1",
+                "0"
+            ],
+            "popularity": 34,
+            "userinfo": "naveen.valluri@agriculture.vic.gov.au|Valluri_admin|Naveen|UserAdmin",
+            "groupPublished": [
+                "Agriculture Victoria Research",
+                "all",
+                "intranet"
+            ],
+            "isPublishedToAll": "true",
+            "record": "record",
+            "cat": [
+                "datasets"
+            ],
+            "draft": "n",
+            "changeDate": "2025-11-18T04:17:06.369Z",
+            "xlink": [
+                "local://srv/api/registries/entries/urn:delwp:metashare:person:-1_person_organisation",
+                "local://srv/api/registries/entries/50c96c6e-5a50-448b-982b-be2f700477c6?lang=&schema=iso19115-3.2018-deeca",
+                "local://srv/api/registries/entries/50c96c6e-5a50-448b-982b-be2f700477c6?lang=&schema=iso19115-3.2018-deeca",
+                "local://srv/api/registries/entries/50c96c6e-5a50-448b-982b-be2f700477c6?lang=&schema=iso19115-3.2018-deeca"
+            ],
+            "id": "25410",
+            "createDate": "2025-11-18T04:15:45.186Z",
+            "isPublishedToIntranet": "true",
+            "owner": "24870",
+            "groupOwner": "14974",
+            "logo": "/images/logos/64fac074-0535-40fb-85ad-4b1c686dd519.png",
+            "hasxlinks": "true",
+            "op0": [
+                "14974",
+                "1",
+                "0"
+            ],
+            "featureOfRecord": "record",
+            "op1": [
+                "14974",
+                "1",
+                "0"
+            ],
+            "isPublishedToGuest": "false",
+            "extra": "null",
+            "documentStandard": "iso19115-3.2018-deeca",
+            "op3": "14974",
+            "op5": [
+                "14974",
+                "1",
+                "0"
+            ],
+            "valid": "-1",
+            "isTemplate": "n",
+            "rating": "0",
+            "isHarvested": "false",
+            "userSavedCount": "0",
+            "sourceCatalogue": "64fac074-0535-40fb-85ad-4b1c686dd519",
+            "indexingError": "true"
+        },
+        "edit": false,
+        "canReview": false,
+        "owner": false,
+        "isPublishedToAll": true,
+        "view": true,
+        "notify": false,
+        "download": true,
+        "dynamic": true,
+        "featured": false,
+        "selected": false
+    },
+    {
+        "_index": "gn-records",
+        "_type": "_doc",
+        "_id": "ec3d3fc7-89a0-44ad-948a-c3595bf50c8a",
+        "_score": 1.0,
+        "_source": {
+            "docType": "metadata",
+            "document": "",
+            "metadataIdentifier": "ec3d3fc7-89a0-44ad-948a-c3595bf50c8a",
+            "standardNameObject": {
+                "default": "ISO 19115-3:2018",
+                "lang": "ISO 19115-3:2018"
+            },
+            "indexingDate": "2025-12-01T17:13:45+11:00",
+            "dateStamp": "2025-12-01T06:13:25.786Z",
+            "mainLanguage": "",
+            "resourceType": [
+                "dataset"
+            ],
+            "OrgObject": {
+                "default": "DEECA",
+                "lang": "DEECA"
+            },
+            "processorOrgObject": {
+                "default": "DEECA",
+                "lang": "DEECA"
+            },
+            "contact": [],
+            "cl_resourceScope": [
+                {
+                    "key": "dataset",
+                    "default": "dataset",
+                    "lang": "dataset",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_ScopeCode"
+                }
+            ],
+            "cl_function": [
+                {
+                    "key": "completeMetadata",
+                    "default": "completeMetadata",
+                    "lang": "completeMetadata",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#CI_OnLineFunctionCode"
+                }
+            ],
+            "cl_status": [
+                {
+                    "key": "completed",
+                    "default": "completed",
+                    "lang": "completed",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_ProgressCode"
+                }
+            ],
+            "cl_spatialRepresentationType": [
+                {
+                    "key": "vector",
+                    "default": "vector",
+                    "lang": "vector",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            ],
+            "cl_type": [
+                {
+                    "key": "discipline",
+                    "default": "discipline",
+                    "lang": "discipline",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_KeywordTypeCode"
+                }
+            ],
+            "cl_classification": [
+                {
+                    "key": "unclassified",
+                    "default": "unclassified",
+                    "lang": "unclassified",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_ClassificationCode"
+                }
+            ],
+            "resourceTitleObject": {
+                "default": "Test GRDC",
+                "lang": "Test GRDC"
+            },
+            "resourceAltTitleObject": [
+                {
+                    "default": "*RCT#12345_no_spaces*",
+                    "lang": "*RCT#12345_no_spaces*"
+                }
+            ],
+            "resourceAbstractObject": {
+                "default": "*Provide full description of project, including details about the collection or dataset that would enable someone to use the data, without contacting the original researchers for further information.*",
+                "lang": "*Provide full description of project, including details about the collection or dataset that would enable someone to use the data, without contacting the original researchers for further information.*"
+            },
+            "cl_resourceCharacterSet": [
+                {
+                    "key": "utf8",
+                    "default": "utf8",
+                    "lang": "utf8",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_CharacterSetCode"
+                }
+            ],
+            "OrgForResourceObject": {
+                "default": "Agriculture Victoria",
+                "lang": "Agriculture Victoria"
+            },
+            "pointOfContactOrgForResourceObject": {
+                "default": "Agriculture Victoria",
+                "lang": "Agriculture Victoria"
+            },
+            "contactForResource": [
+                {
+                    "organisationObject": {
+                        "default": "Agriculture Victoria",
+                        "lang": "Agriculture Victoria"
+                    },
+                    "role": "pointOfContact",
+                    "email": "data.requests@agriculture.vic.gov.au",
+                    "website": "https://ror.org/01mqx8q10",
+                    "logo": "",
+                    "individual": "",
+                    "position": "",
+                    "phone": "",
+                    "address": ""
+                }
+            ],
+            "resourceCreditObject": [
+                {
+                    "default": "*Provide citation(s) for any published references directly relevant, e.g. authors, title, pages, publisher, year published*",
+                    "lang": "*Provide citation(s) for any published references directly relevant, e.g. authors, title, pages, publisher, year published*"
+                },
+                {
+                    "default": "*Add as many credits as needed by clicking the '+' sign below*",
+                    "lang": "*Add as many credits as needed by clicking the '+' sign below*"
+                }
+            ],
+            "supplementalInformationObject": {
+                "default": "*Information about where the resource/data described in this metadata record is stored. Options are (Delete all that don't apply; Network = G drive):*\n \nBASC\nNetwork\nSharePoint\nDEECA Datashare\nOther: *provide as detailed information as possible*",
+                "lang": "*Information about where the resource/data described in this metadata record is stored. Options are (Delete all that don't apply; Network = G drive):*\n \nBASC\nNetwork\nSharePoint\nDEECA Datashare\nOther: *provide as detailed information as possible*"
+            },
+            "purposeObject": {
+                "default": "*In this field, please provide the GRDC contract code (if applicable) and project title*",
+                "lang": "*In this field, please provide the GRDC contract code (if applicable) and project title*"
+            },
+            "hasOverview": "false",
+            "resourceLanguage": [
+                "eng"
+            ],
+            "tag": [
+                {
+                    "default": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*",
+                    "lang": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*"
+                },
+                {
+                    "default": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*",
+                    "lang": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*"
+                }
+            ],
+            "tagNumber": "2",
+            "isOpenData": "false",
+            "keywordType-discipline": [
+                {
+                    "default": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*",
+                    "lang": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*"
+                }
+            ],
+            "keywordType-place": [
+                {
+                    "default": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*",
+                    "lang": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*"
+                }
+            ],
+            "th_otherKeywords-disciplineNumber": "1",
+            "th_otherKeywords-discipline": [
+                {
+                    "default": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*",
+                    "lang": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*"
+                }
+            ],
+            "allKeywords": {
+                "th_otherKeywords-discipline": {
+                    "title": "otherKeywords-discipline",
+                    "theme": "discipline",
+                    "keywords": [
+                        {
+                            "default": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*",
+                            "lang": "*Provide keywords that best describe the collection or dataset, separated by spaces. The AGROVOC Multilingual Thesaurus provides a list of agricultural keywords that can be used*"
+                        }
+                    ]
+                }
+            },
+            "spatialRepresentationType": "vector",
+            "MD_SecurityConstraintsUseLimitationObject": [
+                {
+                    "default": "* Describe the restrictions or constraints that exist on the use of the research data, e.g. timed embargoes or other conditions.\n\nChose one of only these options from the drop-down list below: 'Unclassified', 'Restricted' or 'Sensitive but unclassified' *",
+                    "lang": "* Describe the restrictions or constraints that exist on the use of the research data, e.g. timed embargoes or other conditions.\n\nChose one of only these options from the drop-down list below: 'Unclassified', 'Restricted' or 'Sensitive but unclassified' *"
+                }
+            ],
+            "indexingErrorMsg": [
+                "Warning / Field resourceTemporalDateRange / Lower and upper bounds empty. Date range not indexed."
+            ],
+            "coordinateSystem": [
+                "WGS84 (EPSG:4326)"
+            ],
+            "crsDetails": [
+                {
+                    "code": "WGS84 (EPSG:4326)",
+                    "codeSpace": "EPSG",
+                    "name": "WGS84 (EPSG:4326)",
+                    "url": ""
+                }
+            ],
+            "featureTypes": [],
+            "lineageObject": {
+                "default": "*A general statement about the lineage / history of the data, e.g. connections to other datasets*",
+                "lang": "*A general statement about the lineage / history of the data, e.g. connections to other datasets*"
+            },
+            "sourceDescriptionObject": [
+                {
+                    "default": "*A statement about the source datasets (there may be multiple data sources) used to create the representation*",
+                    "lang": "*A statement about the source datasets (there may be multiple data sources) used to create the representation*"
+                }
+            ],
+            "format": [
+                "DIGITAL - All major formats available"
+            ],
+            "metadataClassification": "unclassified",
+            "resClassification": "unclassified",
+            "resOwner": "Agriculture Victoria",
+            "recordGroup": "ec3d3fc7-89a0-44ad-948a-c3595bf50c8a",
+            "recordOwner": "Bronson Hill",
+            "uuid": "ec3d3fc7-89a0-44ad-948a-c3595bf50c8a",
+            "displayOrder": "0",
+            "groupPublishedId": [
+                "14974",
+                "1",
+                "0"
+            ],
+            "popularity": "1",
+            "userinfo": "bronson.hill@agriculture.vic.gov.au|Hill|Bronson|UserAdmin",
+            "groupPublished": [
+                "Agriculture Victoria Research",
+                "all",
+                "intranet"
+            ],
+            "isPublishedToAll": "true",
+            "record": "record",
+            "cat": [
+                "datasets"
+            ],
+            "draft": "n",
+            "changeDate": "2025-12-01T06:13:25.786Z",
+            "xlink": [
+                "local://srv/api/registries/entries/urn:delwp:metashare:person:-1_person_organisation",
+                "local://srv/api/registries/entries/50c96c6e-5a50-448b-982b-be2f700477c6?lang=&schema=iso19115-3.2018-deeca",
+                "local://srv/api/registries/entries/50c96c6e-5a50-448b-982b-be2f700477c6?lang=&schema=iso19115-3.2018-deeca",
+                "local://srv/api/registries/entries/50c96c6e-5a50-448b-982b-be2f700477c6?lang=&schema=iso19115-3.2018-deeca"
+            ],
+            "id": "25434",
+            "createDate": "2025-12-01T06:13:17.216Z",
+            "isPublishedToIntranet": "true",
+            "owner": "24899",
+            "groupOwner": "14974",
+            "logo": "/images/logos/64fac074-0535-40fb-85ad-4b1c686dd519.png",
+            "hasxlinks": "true",
+            "op0": [
+                "14974",
+                "1",
+                "0"
+            ],
+            "featureOfRecord": "record",
+            "op1": [
+                "14974",
+                "1",
+                "0"
+            ],
+            "isPublishedToGuest": "false",
+            "extra": "null",
+            "documentStandard": "iso19115-3.2018-deeca",
+            "op3": "14974",
+            "op5": [
+                "14974",
+                "1",
+                "0"
+            ],
+            "valid": "-1",
+            "isTemplate": "n",
+            "rating": "0",
+            "isHarvested": "false",
+            "userSavedCount": "0",
+            "sourceCatalogue": "64fac074-0535-40fb-85ad-4b1c686dd519",
+            "indexingError": "true"
+        },
+        "edit": false,
+        "canReview": false,
+        "owner": false,
+        "isPublishedToAll": true,
+        "view": true,
+        "notify": false,
+        "download": true,
+        "dynamic": true,
+        "featured": false,
+        "selected": false
+    },
+    {
+        "_index": "gn-records",
+        "_type": "_doc",
+        "_id": "7ecd05e8-585c-42bc-8d94-ab9b032fbcd0",
+        "_score": 1.0,
+        "_source": {
+            "docType": "metadata",
+            "document": "",
+            "metadataIdentifier": "7ecd05e8-585c-42bc-8d94-ab9b032fbcd0",
+            "standardNameObject": {
+                "default": "ISO 19115-3:2018",
+                "lang": "ISO 19115-3:2018"
+            },
+            "indexingDate": "2025-12-01T05:54:32.528Z",
+            "dateStamp": "2025-11-24T03:05:30.392Z",
+            "mainLanguage": "",
+            "resourceType": [
+                "dataset"
+            ],
+            "OrgObject": {
+                "default": "DELWP",
+                "lang": "DELWP"
+            },
+            "processorOrgObject": {
+                "default": "DELWP",
+                "lang": "DELWP"
+            },
+            "contact": [],
+            "cl_resourceScope": [
+                {
+                    "key": "dataset",
+                    "default": "dataset",
+                    "lang": "dataset",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_ScopeCode"
+                }
+            ],
+            "cl_function": [
+                {
+                    "key": "completeMetadata",
+                    "default": "completeMetadata",
+                    "lang": "completeMetadata",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#CI_OnLineFunctionCode"
+                },
+                {
+                    "key": "information",
+                    "default": "information",
+                    "lang": "information",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#CI_OnLineFunctionCode"
+                }
+            ],
+            "cl_status": [
+                {
+                    "key": "completed",
+                    "default": "completed",
+                    "lang": "completed",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_ProgressCode"
+                }
+            ],
+            "cl_spatialRepresentationType": [
+                {
+                    "key": "textTable",
+                    "default": "textTable",
+                    "lang": "textTable",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            ],
+            "cl_maintenanceAndUpdateFrequency": [
+                {
+                    "key": "asNeeded",
+                    "default": "asNeeded",
+                    "lang": "asNeeded",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_MaintenanceFrequencyCode"
+                }
+            ],
+            "cl_type": [
+                {
+                    "key": "product",
+                    "default": "product",
+                    "lang": "product",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_KeywordTypeCode"
+                }
+            ],
+            "cl_classification": [
+                {
+                    "key": "unclassified",
+                    "default": "unclassified",
+                    "lang": "unclassified",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_ClassificationCode"
+                }
+            ],
+            "cl_useConstraints": [
+                {
+                    "key": "restricted",
+                    "default": "restricted",
+                    "lang": "restricted",
+                    "link": "http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode",
+                    "text": "restricted"
+                }
+            ],
+            "resourceTitleObject": {
+                "default": "Australian grain gene bank (Lentil) \u2013 Part III",
+                "lang": "Australian grain gene bank (Lentil) \u2013 Part III"
+            },
+            "resourceAltTitleObject": [
+                {
+                    "default": "B2024009",
+                    "lang": "B2024009"
+                }
+            ],
+            "resourceAbstractObject": {
+                "default": "A dataset of images and image analysis data collected from a glasshouse-based high-throughput phenomics experiment conducted at Plant Phenomics Victoria in Bundoora on lentils in 2025.",
+                "lang": "A dataset of images and image analysis data collected from a glasshouse-based high-throughput phenomics experiment conducted at Plant Phenomics Victoria in Bundoora on lentils in 2025."
+            },
+            "cl_resourceCharacterSet": [
+                {
+                    "key": "utf8",
+                    "default": "utf8",
+                    "lang": "utf8",
+                    "link": "https://github.com/geonetwork-delwp/iso19115-3.2018-1/blob/master/codelists.xml#MD_CharacterSetCode"
+                }
+            ],
+            "OrgForResourceObject": {
+                "default": "Agriculture Victoria",
+                "lang": "Agriculture Victoria"
+            },
+            "ownerOrgForResourceObject": {
+                "default": "Agriculture Victoria",
+                "lang": "Agriculture Victoria"
+            },
+            "contactForResource": [],
+            "authorOrgForResourceObject": {
+                "default": "Agriculture Victoria",
+                "lang": "Agriculture Victoria"
+            },
+            "supplementalInformationObject": {
+                "default": "Location of images: BASC (/group/ppv/images/B2024009/)\nLocation of image analysis data: BASC (/group/ppv/results/B2024009/vis/)",
+                "lang": "Location of images: BASC (/group/ppv/images/B2024009/)\nLocation of image analysis data: BASC (/group/ppv/results/B2024009/vis/)"
+            },
+            "purposeObject": {
+                "default": "GRDC Project \"Achieving improved genetic gain for yield in chickpea, faba bean and lentil using genetic diversity\". Project Reference UMU2403-009RTX.",
+                "lang": "GRDC Project \"Achieving improved genetic gain for yield in chickpea, faba bean and lentil using genetic diversity\". Project Reference UMU2403-009RTX."
+            },
+            "hasOverview": "false",
+            "resourceLanguage": [
+                "eng"
+            ],
+            "tag": [
+                {
+                    "default": "lentil, chickpea",
+                    "lang": "lentil, chickpea"
+                },
+                {
+                    "default": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*",
+                    "lang": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*"
+                }
+            ],
+            "tagNumber": "2",
+            "isOpenData": "false",
+            "keywordType-product": [
+                {
+                    "default": "lentil, chickpea",
+                    "lang": "lentil, chickpea"
+                }
+            ],
+            "keywordType-place": [
+                {
+                    "default": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*",
+                    "lang": "*Use this space to describe the location where research data was collected and/or draw a bounding box below*"
+                }
+            ],
+            "th_otherKeywords-productNumber": "1",
+            "th_otherKeywords-product": [
+                {
+                    "default": "lentil, chickpea",
+                    "lang": "lentil, chickpea"
+                }
+            ],
+            "allKeywords": {
+                "th_otherKeywords-product": {
+                    "title": "otherKeywords-product",
+                    "theme": "product",
+                    "keywords": [
+                        {
+                            "default": "lentil, chickpea",
+                            "lang": "lentil, chickpea"
+                        }
+                    ]
+                }
+            },
+            "resolutionDistance": [
+                "1 m"
+            ],
+            "spatialRepresentationType": "textTable",
+            "geom": [
+                {
+                    "type": "Polygon",
+                    "coordinates": [
+                        [
+                            [
+                                144.675379,
+                                -38.152401
+                            ],
+                            [
+                                145.44132,
+                                -38.152401
+                            ],
+                            [
+                                145.44132,
+                                -37.604074
+                            ],
+                            [
+                                144.675379,
+                                -37.604074
+                            ],
+                            [
+                                144.675379,
+                                -38.152401
+                            ]
+                        ]
+                    ]
+                }
+            ],
+            "location": "-37.8782375,145.0583495",
+            "resourceTemporalDateRange": [
+                {
+                    "gte": "2025-06-30T14:00:00.000Z",
+                    "lte": "2025-09-17T14:00:00.000Z"
+                }
+            ],
+            "resourceTemporalExtentDateRange": [
+                {
+                    "gte": "2025-06-30T14:00:00.000Z",
+                    "lte": "2025-09-17T14:00:00.000Z"
+                }
+            ],
+            "resourceTemporalExtentDetails": [
+                {
+                    "start": {
+                        "date": "2025-07-01"
+                    },
+                    "end": {
+                        "date": "2025-09-18"
+                    }
+                }
+            ],
+            "coordinateSystem": [
+                "WGS84 (EPSG:4326)"
+            ],
+            "crsDetails": [
+                {
+                    "code": "WGS84 (EPSG:4326)",
+                    "codeSpace": "EPSG",
+                    "name": "WGS84 (EPSG:4326)",
+                    "url": ""
+                }
+            ],
+            "featureTypes": [],
+            "format": [
+                "DIGITAL - All major formats available"
+            ],
+            "linkUrl": [
+                "https://dataverse.harvard.edu/dataverse/australiangrainsgenebank",
+                "10.25909/24784353.v1"
+            ],
+            "linkProtocol": [
+                "WWW:LINK",
+                "WWW:LINK"
+            ],
+            "linkUrlProtocolWWWLINK": [
+                "https://dataverse.harvard.edu/dataverse/australiangrainsgenebank",
+                "10.25909/24784353.v1"
+            ],
+            "link": [
+                {
+                    "protocol": "WWW:LINK",
+                    "mimeType": "",
+                    "urlObject": {
+                        "default": "https://dataverse.harvard.edu/dataverse/australiangrainsgenebank",
+                        "lang": "https://dataverse.harvard.edu/dataverse/australiangrainsgenebank"
+                    },
+                    "nameObject": {
+                        "default": "landing page",
+                        "lang": "landing page"
+                    },
+                    "function": "information",
+                    "applicationProfile": "",
+                    "group": 0
+                },
+                {
+                    "protocol": "WWW:LINK",
+                    "mimeType": "",
+                    "urlObject": {
+                        "default": "10.25909/24784353.v1",
+                        "lang": "10.25909/24784353.v1"
+                    },
+                    "nameObject": {
+                        "default": "DOI",
+                        "lang": "DOI"
+                    },
+                    "function": "information",
+                    "applicationProfile": "",
+                    "group": 0
+                }
+            ],
+            "metadataClassification": "unclassified",
+            "resClassification": "unclassified",
+            "license": "DELWP Data License",
+            "resOwner": "Agriculture Victoria",
+            "recordGroup": "7ecd05e8-585c-42bc-8d94-ab9b032fbcd0",
+            "recordOwner": "Naveen Valluri_admin",
+            "uuid": "7ecd05e8-585c-42bc-8d94-ab9b032fbcd0",
+            "displayOrder": "0",
+            "groupPublishedId": [
+                "14975",
+                "1",
+                "0"
+            ],
+            "popularity": 80,
+            "userinfo": "naveen.valluri@agriculture.vic.gov.au|Valluri_admin|Naveen|UserAdmin",
+            "groupPublished": [
+                "Agriculture Victoria Research 2",
+                "all",
+                "intranet"
+            ],
+            "isPublishedToAll": "true",
+            "record": "record",
+            "cat": [
+                "datasets"
+            ],
+            "draft": "n",
+            "changeDate": "2025-11-24T03:05:30.392Z",
+            "xlink": [
+                "local://srv/api/registries/entries/urn:delwp:metashare:person:-1_person_organisation",
+                "local://srv/api/registries/entries/aecf216c-95c4-4ac7-9e16-947aca04ecc2?lang=&schema=iso19115-3.2018-deeca",
+                "local://srv/api/registries/entries/04451555-b083-41b7-9ea0-5e6e9d2d6936?lang=&schema=iso19115-3.2018-deeca",
+                "local://srv/api/registries/entries/50c96c6e-5a50-448b-982b-be2f700477c6?lang=&schema=iso19115-3.2018-deeca",
+                "local://srv/api/registries/entries/aecf216c-95c4-4ac7-9e16-947aca04ecc2?lang=&schema=iso19115-3.2018-deeca",
+                "local://srv/api/registries/entries/8ec91805-eb85-4e2f-ab95-4fb0086d14dd?lang=&schema=iso19115-3.2018-deeca"
+            ],
+            "id": "25372",
+            "createDate": "2025-10-22T03:28:29.145Z",
+            "isPublishedToIntranet": "true",
+            "owner": "24870",
+            "groupOwner": "14975",
+            "logo": "/images/logos/64fac074-0535-40fb-85ad-4b1c686dd519.png",
+            "hasxlinks": "true",
+            "op0": [
+                "14975",
+                "1",
+                "0"
+            ],
+            "featureOfRecord": "record",
+            "op1": [
+                "14975",
+                "1",
+                "0"
+            ],
+            "isPublishedToGuest": "false",
+            "extra": "null",
+            "documentStandard": "iso19115-3.2018-deeca",
+            "op3": "14975",
+            "op5": [
+                "14975",
+                "1",
+                "0"
+            ],
+            "valid": "-1",
+            "isTemplate": "n",
+            "rating": "0",
+            "isHarvested": "false",
+            "userSavedCount": "0",
+            "sourceCatalogue": "64fac074-0535-40fb-85ad-4b1c686dd519"
+        },
+        "edit": false,
+        "canReview": false,
+        "owner": false,
+        "isPublishedToAll": true,
+        "view": true,
+        "notify": false,
+        "download": true,
+        "dynamic": true,
+        "featured": false,
+        "selected": false
+    }
+]
