@@ -1,5 +1,5 @@
 import tomllib
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 from dataclasses import dataclass, field
 
 @dataclass
@@ -19,8 +19,15 @@ class NotificationsConfig:
     client_secret: str
 
 @dataclass
+class RuleConfig:
+    type: str
+    xpath: str
+    field_name: str
+    allowed_values: List[str] = field(default_factory=list)
+
+@dataclass
 class ValidatorConfig:
-    valid_resource_types: List[str]
+    rules: List[RuleConfig]
 
 class ConfigLoader:
     _instance = None
@@ -37,6 +44,7 @@ class ConfigLoader:
             self._config = self._load_config()
             self.source_config = self._load_source_config()
             self.notifications_config = self._load_notifications_config()
+            self.validator_config = self._load_validator_config()
             self._initialized = True
 
     def _load_config(self) -> Dict[str, Any]:
@@ -62,3 +70,19 @@ class ConfigLoader:
             client_id=notifications_section.get("client_id", ""),
             client_secret=notifications_section.get("client_secret", "")
         )
+
+    def _load_validator_config(self) -> ValidatorConfig:
+        rules_data = self._config.get("rules", [])
+        rules = []
+        for r in rules_data:
+            rules.append(RuleConfig(
+                type=r.get("type", ""),
+                xpath=r.get("path", ""),
+                field_name=r.get("name", ""),
+                allowed_values=r.get("allowed_values", [])
+            ))
+
+        return ValidatorConfig(
+            rules=rules
+        )
+    

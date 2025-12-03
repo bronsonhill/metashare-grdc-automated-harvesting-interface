@@ -5,8 +5,35 @@ get_record_endpoint = "records"
 test_endpoint = "site"
 grdc_filter_keywords = ["grdc", "GRDC", "Grains Research and Development Corporation", "grains research and development corporation", "Grain Research and Development Corporation", "grain research and development corporation"]
 
+
 [notifications]
 channel = "email"
 destination = ["bronson.hill@agriculture.vic.gov.au"]
 client_id = ""
 client_secret = ""
+
+
+[[rules]]
+type = "field_exists"
+name = "title"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:title/gco:CharacterString"
+
+[[rules]]
+type = "field_exists"
+name = "resource type"
+path = "mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue"
+
+[[rules]]
+type = "field_exists"
+name = "purpose"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:purpose/gco:CharacterString"
+
+[[rules]]   
+type = "field_exists"
+name = "start date"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:beginPosition"
+
+[[rules]]
+type = "field_exists"
+name = "end date"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:endPosition"

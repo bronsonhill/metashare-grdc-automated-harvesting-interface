@@ -78,3 +78,10 @@ class NotificationService:
             content=f"Harvest completed. Status: {status}. Records processed: {record_count}"
         )
         self.backend.send(msg, self.config)
+
+    def notify_validation_error(self, errors: list[str]):
+        msg = NotificationMessage(
+            subject="Validation Error",
+            content=f"Validation failed with errors: {', '.join(errors)}"
+        )
+        self.backend.send(msg, self.config)
