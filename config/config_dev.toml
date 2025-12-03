@@ -1,0 +1,12 @@
+[source]
+url = "https://uat-metashare.maps.vic.gov.au/geonetwork/srv/api"
+search_endpoint = "search/records/_search"
+get_record_endpoint = "records"
+test_endpoint = "site"
+grdc_filter_keywords = ["grdc", "GRDC", "Grains Research and Development Corporation", "grains research and development corporation", "Grain Research and Development Corporation", "grain research and development corporation"]
+
+[notifications]
+channel = "email"
+destination = ["bronson.hill@agriculture.vic.gov.au"]
+client_id = ""
+client_secret = ""
