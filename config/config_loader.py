@@ -18,6 +18,10 @@ class NotificationsConfig:
     client_id: str
     client_secret: str
 
+@dataclass
+class ValidatorConfig:
+    valid_resource_types: List[str]
+
 class ConfigLoader:
     def __init__(self, config_path: str = "config/config.toml"):
         self.config_path = config_path

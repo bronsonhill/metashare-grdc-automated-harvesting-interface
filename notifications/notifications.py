@@ -40,7 +40,7 @@ class FileNotificationBackend(NotificationBackend):
             f.write("\n")
 
 
-class EmailNotificationBackend(NotificationBackend):
+class EmailNotificationMicrosoftBackend(NotificationBackend):
     def send(self, message: NotificationMessage, config: NotificationsConfig):
         # Placeholder for email implementation
         print(f"Sending email: {message.subject} to {config.destination}")
