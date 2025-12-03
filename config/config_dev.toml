@@ -12,7 +12,6 @@ destination = ["bronson.hill@agriculture.vic.gov.au"]
 client_id = ""
 client_secret = ""
 
-
 [[rules]]
 type = "field_exists"
 name = "title"
@@ -37,3 +36,22 @@ path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Exten
 type = "field_exists"
 name = "end date"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:endPosition"
+
+[[rules]]
+type = "value_in_list"
+name = "classification"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:classification/mcc:MD_ClassificationCode/@codeListValue"
+allowed_values = ["unclassified", "sensitive but unclassified", "for office use only", "limited distribution", "restricted", "confidential", "protected", "secret", "top secret"]
+
+[[rules]]
+type = "value_in_list"
+name = "license"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:legalConstraints/mcc:MD_LegalConstraints/mcc:accessConstraints/mcc:MD_RestrictionCode/@codeListValue"
+allowed_values = ["AVR transfer agreement", "Data access license agreement", "Creative Commons CC-BY-4.0"]
+
+[[rules]]
+type = "value_in_list"
+name = "spatial_reference_system"
+path = "mdb:referenceSystemInfo/mrs:MD_ReferenceSystem/mrs:referenceSystemIdentifier/mcc:MD_Identifier/mcc:code/gco:CharacterString"
+allowed_values = ["WGS84 (EPSG:4326)", "Google mercator (EPSG:3857)"]
+

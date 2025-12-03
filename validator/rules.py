@@ -10,6 +10,7 @@ NAMESPACES = {
     "mcc": "http://standards.iso.org/iso/19115/-3/mcc/1.0",
     "gex": "http://standards.iso.org/iso/19115/-3/gex/1.0",
     "gml": "http://www.opengis.net/gml/3.2",
+    "mrs": "http://standards.iso.org/iso/19115/-3/mrs/1.0",
 }
 
 class ValidationRule(ABC):

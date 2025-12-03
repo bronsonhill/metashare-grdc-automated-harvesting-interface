@@ -26,7 +26,7 @@ class GeoNetworkValidator(ValidatorInterface):
         try:
             # Parse XML
             root = ET.fromstring(record_xml)
-
+            
             print(f"Validating record: {root.find('mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:title/gco:CharacterString', NAMESPACES).text}")
             
             # Run all rules
