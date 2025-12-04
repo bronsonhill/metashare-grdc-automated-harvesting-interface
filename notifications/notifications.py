@@ -54,7 +54,7 @@ class NotificationService:
     def notify_connection_error(self, error_message: str):
         msg = NotificationMessage(
             subject="Connection Error",
-            content=f"A connection error occurred: {error_message}"
+            content=f"Establishing a basic connection to the Metashare/GeoNetwork API has failed. The connection attempt may have failed due to Metashare/GeoNetwork being down or unreachable. The Batch Job will still be attempted, but may fail.\n\nError: {error_message}"
         )
         self.backend.send(msg, self.config)
 

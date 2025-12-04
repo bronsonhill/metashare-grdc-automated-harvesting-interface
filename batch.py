@@ -1,6 +1,6 @@
 from connector import ConnectorInterface, GeoNetworkConnector 
-from notifications import NotificationService, FileNotificationBackend
 from validator import GeoNetworkValidator
+from notifications import NotificationService, FileNotificationBackend
 from config import ConfigLoader
 from datetime import datetime, timezone, timedelta
 
@@ -46,7 +46,6 @@ class BatchJob:
 
 
 if __name__ == "__main__":
-    # Initialize ConfigLoader (singleton)
     config_loader = ConfigLoader("config/config_dev.toml")
     
     notifications_backend = FileNotificationBackend()

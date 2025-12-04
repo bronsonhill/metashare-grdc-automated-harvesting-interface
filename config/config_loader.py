@@ -22,7 +22,7 @@ class NotificationsConfig:
 class RuleConfig:
     type: str
     xpath: str
-    field_name: str
+    field_display_name: str
     allowed_values: List[str] = field(default_factory=list)
 
 @dataclass
@@ -78,7 +78,7 @@ class ConfigLoader:
             rules.append(RuleConfig(
                 type=r.get("type", ""),
                 xpath=r.get("path", ""),
-                field_name=r.get("name", ""),
+                field_display_name=r.get("field_display_name", ""),
                 allowed_values=r.get("allowed_values", [])
             ))
 
