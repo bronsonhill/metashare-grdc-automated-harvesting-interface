@@ -145,12 +145,20 @@ class IdentifierRule(ValidationRule):
              return f"Record is missing {self.field_name}"
         try:
             # check for doi, handle or url
-            if self._valid_doi(record):
-                return self._valid_doi(record)
-            if self._valid_handle(record):
-                return self._valid_handle(record)
-            if self._valid_url(record):
-                return self._valid_url(record)
+            # check for doi, handle or url
+            doi_err = self._valid_doi(record)
+            if not doi_err:
+                return None
+            
+            handle_err = self._valid_handle(record)
+            if not handle_err:
+                return None
+
+            url_err = self._valid_url(record)
+            if not url_err:
+                return None
+            
+            return f"Record has an invalid identifier: {node.text.strip()}"
         except ValueError:
             return f"Record has an invalid identifier: {node.text.strip()}"
     
