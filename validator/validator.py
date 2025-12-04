@@ -27,8 +27,6 @@ class GeoNetworkValidator(ValidatorInterface):
             # Parse XML
             root = ET.fromstring(record_xml)
             
-            print(f"Validating record: {root.find('mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:title/gco:CharacterString', NAMESPACES).text}")
-            
             # Run all rules
             for rule in self.rules:
                 error = rule.validate(root)
@@ -44,17 +42,19 @@ class GeoNetworkValidator(ValidatorInterface):
     def _set_rules(self):
         for rule in self.validator_config.rules:
             if rule.type == "field_exists":
-                self.rules.append(FieldExistsRule(rule.xpath, rule.field_name))
+                self.rules.append(FieldExistsRule(rule.xpath, rule.field_display_name))
             elif rule.type == "value_in_list":
-                self.rules.append(ValueInListRule(rule.xpath, rule.allowed_values, rule.field_name))
+                self.rules.append(ValueInListRule(rule.xpath, rule.allowed_values, rule.field_display_name))
             elif rule.type == "float":
-                self.rules.append(FloatRule(rule.xpath, rule.field_name))
+                self.rules.append(FloatRule(rule.xpath, rule.field_display_name))
             elif rule.type == "date":
-                self.rules.append(DateRule(rule.xpath, rule.field_name))
+                self.rules.append(DateRule(rule.xpath, rule.field_display_name))
             elif rule.type == "valid_purpose":
-                self.rules.append(ValidPurposeRule(rule.xpath, rule.field_name))
+                self.rules.append(ValidPurposeRule(rule.xpath, rule.field_display_name))
             elif rule.type == "identifier":
-                self.rules.append(IdentifierRule(rule.xpath, rule.field_name))
+                self.rules.append(IdentifierRule(rule.xpath, rule.field_display_name))
             elif rule.type == "citation":
-                self.rules.append(CitationRule(rule.xpath, rule.field_name))
+                self.rules.append(CitationRule(rule.xpath, rule.field_display_name))
+            elif rule.type == "principal_investigator":
+                self.rules.append(PrincipalInvestigatorRule(rule.xpath, rule.field_display_name))
 

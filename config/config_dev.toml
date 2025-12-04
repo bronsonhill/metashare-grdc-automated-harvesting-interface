@@ -14,44 +14,50 @@ client_secret = ""
 
 [[rules]]
 type = "field_exists"
-name = "title"
+field_display_name = "title"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:title/gco:CharacterString"
 
 [[rules]]
 type = "field_exists"
-name = "resource type"
+field_display_name = "abstract"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:abstract/gco:CharacterString"
+
+[[rules]]
+type = "value_in_list"
+field_display_name = "resource type"
 path = "mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue"
+allowed_values = ["dataset", "product"]
 
 [[rules]]
 type = "field_exists"
-name = "purpose"
+field_display_name = "purpose"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:purpose/gco:CharacterString"
 
 [[rules]]   
 type = "field_exists"
-name = "start date"
+field_display_name = "start date"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:beginPosition"
 
 [[rules]]
 type = "field_exists"
-name = "end date"
+field_display_name = "end date"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:endPosition"
 
 [[rules]]
 type = "value_in_list"
-name = "classification"
+field_display_name = "access classification"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:classification/mcc:MD_ClassificationCode/@codeListValue"
 allowed_values = ["unclassified", "sensitive but unclassified", "for office use only", "limited distribution", "restricted", "confidential", "protected", "secret", "top secret"]
 
 [[rules]]
 type = "value_in_list"
-name = "license"
+field_display_name = "access license"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:legalConstraints/mcc:MD_LegalConstraints/mcc:accessConstraints/mcc:MD_RestrictionCode/@codeListValue"
 allowed_values = ["AVR transfer agreement", "Data access license agreement", "Creative Commons CC-BY-4.0"]
 
 [[rules]]
 type = "value_in_list"
-name = "spatial_reference_system"
+field_display_name = "spatial_reference_system"
 path = "mdb:referenceSystemInfo/mrs:MD_ReferenceSystem/mrs:referenceSystemIdentifier/mcc:MD_Identifier/mcc:code/gco:CharacterString"
 allowed_values = ["WGS84 (EPSG:4326)", "Google mercator (EPSG:3857)"]
 
