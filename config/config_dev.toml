@@ -14,50 +14,101 @@ client_secret = ""
 
 [[rules]]
 type = "field_exists"
-field_display_name = "title"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:title/gco:CharacterString"
+field_display_name = "title"
 
 [[rules]]
 type = "field_exists"
-field_display_name = "abstract"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:abstract/gco:CharacterString"
+field_display_name = "abstract"
 
 [[rules]]
 type = "value_in_list"
-field_display_name = "resource type"
+path = "mri:resourceConstraints/mco:MD_SecurityConstraints/mco:classification/mco:MD_ClassificationCode/@codeListValue"
+field_display_name = "classification"
+allowed_values = ["unclassified", "restricted", "confidential", "secret", "topSecret", "sensitiveButUnclassified", "forOfficialUseOnly", "protected", "limitedDistribution", "limited distribution", "for office use only", "top secret", "sensitive but unclassified"]
+
+[[rules]]
+type = "value_in_list"
 path = "mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope/mcc:MD_ScopeCode/@codeListValue"
+field_display_name = "resource type"
 allowed_values = ["dataset", "product"]
 
 [[rules]]
-type = "field_exists"
-field_display_name = "purpose"
-path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:purpose/gco:CharacterString"
-
-[[rules]]   
-type = "field_exists"
-field_display_name = "start date"
-path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:beginPosition"
-
-[[rules]]
-type = "field_exists"
-field_display_name = "end date"
-path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:endPosition"
+type = "value_in_list"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_LegalConstraints/@title"
+field_display_name = "license"
+allowed_values = ["Creative Commons Attribution 4.0 (CC-BY)", "Data Access License Agreement", "AVR Transfer Agreement", "Creative Commons CC-BY-4.0"]
 
 [[rules]]
 type = "value_in_list"
-field_display_name = "access classification"
-path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:classification/mcc:MD_ClassificationCode/@codeListValue"
-allowed_values = ["unclassified", "sensitive but unclassified", "for office use only", "limited distribution", "restricted", "confidential", "protected", "secret", "top secret"]
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_LegalConstraints/mco:reference/cit:CI_Citation/cit:title/gco:CharacterString"
+field_display_name = "license text"
+allowed_values = ["Creative Commons Attribution 4.0 (CC-BY)", "Data Access License Agreement", "AVR Transfer Agreement", "Creative Commons CC-BY-4.0", "Creative commons attribution 4.0 (CC-BY)", "Data access license agreement", "AVR transfer agreement"]
 
 [[rules]]
 type = "value_in_list"
-field_display_name = "access license"
-path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:legalConstraints/mcc:MD_LegalConstraints/mcc:accessConstraints/mcc:MD_RestrictionCode/@codeListValue"
-allowed_values = ["AVR transfer agreement", "Data access license agreement", "Creative Commons CC-BY-4.0"]
+path = "mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode/@codeListValue"
+field_display_name = "spatial representation type"
+allowed_values = ["vector", "grid", "textTable", "tin", "stereoModel", "video"]
 
 [[rules]]
 type = "value_in_list"
-field_display_name = "spatial_reference_system"
 path = "mdb:referenceSystemInfo/mrs:MD_ReferenceSystem/mrs:referenceSystemIdentifier/mcc:MD_Identifier/mcc:code/gco:CharacterString"
+field_display_name = "spatial reference system"
 allowed_values = ["WGS84 (EPSG:4326)", "Google mercator (EPSG:3857)"]
 
+[[rules]]
+type = "float"
+path = "gex:westBoundLongitude/gco:Decimal"
+field_display_name = "West Bound Longitude"
+
+[[rules]]
+type = "float"
+path = "gex:eastBoundLongitude/gco:Decimal"
+field_display_name = "East Bound Longitude"
+
+[[rules]]
+type = "float"
+path = "gex:southBoundLatitude/gco:Decimal"
+field_display_name = "South Bound Latitude"
+
+[[rules]]
+type = "float"
+path = "gex:northBoundLatitude/gco:Decimal"
+field_display_name = "North Bound Latitude"
+
+[[rules]]
+type = "date"
+path = "gml:beginPosition"
+field_display_name = "Begin Date"
+
+[[rules]]
+type = "date"
+path = "gml:endPosition"
+field_display_name = "End Date"
+
+[[rules]]
+type = "valid_purpose"
+path = "mri:purpose/gco:CharacterString"
+field_display_name = "Purpose"
+
+[[rules]]
+type = "identifier"
+path = "mri:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier/mcc:code/gco:CharacterString"
+field_display_name = "Identifier"
+
+[[rules]]
+type = "citation"
+path = "mri:citation/cit:CI_Citation/cit:citedResponsibleParty/cit:CI_Responsibility/cit:party/cit:CI_Organisation/cit:individual/cit:CI_Individual/cit:contactInfo/cit:CI_Contact/cit:onlineResource/cit:CI_OnlineResource/cit:linkage/gco:CharacterString"
+field_display_name = "Citation Linkage"
+
+[[rules]]
+type = "principal_investigator"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:citedResponsibleParty"
+field_display_name = "Principal Investigator"
+
+[[rules]]
+type = "field_exists"
+path = "mdb:distributionInfo/mrd:MD_Distribution/mrd:transferOptions/mrd:MD_DigitalTransferOptions/mrd:onLine/cit:CI_OnlineResource/cit:linkage/gco:CharacterString"
+field_display_name = "Distribution Online Resource"
