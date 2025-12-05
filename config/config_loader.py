@@ -2,6 +2,7 @@ import tomllib
 from typing import Any, Dict, List, Optional
 from dataclasses import dataclass, field
 
+
 @dataclass
 class SourceConfig:
     url: str
@@ -11,12 +12,14 @@ class SourceConfig:
     maxRecords: int = 100
     grdc_filter_keywords: List[str] = field(default_factory=list)
 
+
 @dataclass
 class NotificationsConfig:
     channel: str
     destination: List[str]
     client_id: str
     client_secret: str
+
 
 @dataclass
 class RuleConfig:
@@ -25,9 +28,11 @@ class RuleConfig:
     field_display_name: str
     allowed_values: List[str] = field(default_factory=list)
 
+
 @dataclass
 class ValidatorConfig:
     rules: List[RuleConfig]
+
 
 class ConfigLoader:
     _instance = None

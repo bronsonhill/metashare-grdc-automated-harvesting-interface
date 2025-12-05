@@ -31,7 +31,6 @@ class BatchStats:
     end_time: datetime.datetime
 
 
-
 class NotificationBackend(ABC):
     @abstractmethod
     def send(self, message: NotificationMessage, config: NotificationsConfig):

@@ -10,6 +10,8 @@ from validator.validator import GeoNetworkValidator
 class TestGeoNetworkValidatorXML(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        from config import ConfigLoader
+        ConfigLoader("config/config_dev.toml")
         cls.validator = GeoNetworkValidator()
         cls.base_path = os.path.dirname(os.path.abspath(__file__))
         cls.valid_data_path = os.path.join(cls.base_path, 'data/geonetwork/generated_valid')

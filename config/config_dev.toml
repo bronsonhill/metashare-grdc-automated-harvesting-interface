@@ -12,6 +12,7 @@ destination = ["bronson.hill@agriculture.vic.gov.au"]
 client_id = ""
 client_secret = ""
 
+
 [[rules]]
 type = "field_exists"
 path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:title/gco:CharacterString"
@@ -24,7 +25,7 @@ field_display_name = "abstract"
 
 [[rules]]
 type = "value_in_list"
-path = "mri:resourceConstraints/mco:MD_SecurityConstraints/mco:classification/mco:MD_ClassificationCode/@codeListValue"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/mco:MD_SecurityConstraints/mco:classification/mco:MD_ClassificationCode/@codeListValue"
 field_display_name = "classification"
 allowed_values = ["unclassified", "restricted", "confidential", "secret", "topSecret", "sensitiveButUnclassified", "forOfficialUseOnly", "protected", "limitedDistribution", "limited distribution", "for office use only", "top secret", "sensitive but unclassified"]
 
@@ -48,7 +49,7 @@ allowed_values = ["Creative Commons Attribution 4.0 (CC-BY)", "Data Access Licen
 
 [[rules]]
 type = "value_in_list"
-path = "mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode/@codeListValue"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:spatialRepresentationType/mcc:MD_SpatialRepresentationTypeCode/@codeListValue"
 field_display_name = "spatial representation type"
 allowed_values = ["vector", "grid", "textTable", "tin", "stereoModel", "video"]
 
@@ -60,47 +61,47 @@ allowed_values = ["WGS84 (EPSG:4326)", "Google mercator (EPSG:3857)"]
 
 [[rules]]
 type = "float"
-path = "gex:westBoundLongitude/gco:Decimal"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:geographicElement/gex:EX_GeographicBoundingBox/gex:westBoundLongitude/gco:Decimal"
 field_display_name = "West Bound Longitude"
 
 [[rules]]
 type = "float"
-path = "gex:eastBoundLongitude/gco:Decimal"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:geographicElement/gex:EX_GeographicBoundingBox/gex:eastBoundLongitude/gco:Decimal"
 field_display_name = "East Bound Longitude"
 
 [[rules]]
 type = "float"
-path = "gex:southBoundLatitude/gco:Decimal"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:geographicElement/gex:EX_GeographicBoundingBox/gex:southBoundLatitude/gco:Decimal"
 field_display_name = "South Bound Latitude"
 
 [[rules]]
 type = "float"
-path = "gex:northBoundLatitude/gco:Decimal"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:geographicElement/gex:EX_GeographicBoundingBox/gex:northBoundLatitude/gco:Decimal"
 field_display_name = "North Bound Latitude"
 
 [[rules]]
 type = "date"
-path = "gml:beginPosition"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:beginPosition"
 field_display_name = "Begin Date"
 
 [[rules]]
 type = "date"
-path = "gml:endPosition"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimePeriod/gml:endPosition"
 field_display_name = "End Date"
 
 [[rules]]
 type = "valid_purpose"
-path = "mri:purpose/gco:CharacterString"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:purpose/gco:CharacterString"
 field_display_name = "Purpose"
 
 [[rules]]
 type = "identifier"
-path = "mri:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier/mcc:code/gco:CharacterString"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:identifier/mcc:MD_Identifier/mcc:code/gco:CharacterString"
 field_display_name = "Identifier"
 
 [[rules]]
 type = "citation"
-path = "mri:citation/cit:CI_Citation/cit:citedResponsibleParty/cit:CI_Responsibility/cit:party/cit:CI_Organisation/cit:individual/cit:CI_Individual/cit:contactInfo/cit:CI_Contact/cit:onlineResource/cit:CI_OnlineResource/cit:linkage/gco:CharacterString"
+path = "mdb:identificationInfo/mri:MD_DataIdentification/mri:citation/cit:CI_Citation/cit:citedResponsibleParty/cit:CI_Responsibility/cit:party/cit:CI_Organisation/cit:individual/cit:CI_Individual/cit:contactInfo/cit:CI_Contact/cit:onlineResource/cit:CI_OnlineResource/cit:linkage/gco:CharacterString"
 field_display_name = "Citation Linkage"
 
 [[rules]]
