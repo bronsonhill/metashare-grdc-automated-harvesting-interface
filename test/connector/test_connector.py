@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import MagicMock, patch
 import requests
-from connector import GeoNetworkConnector
+from connector import GeoNetworkConnector, ConnectorError
 
 class TestGeoNetworkConnector(unittest.TestCase):
     def setUp(self):
@@ -71,7 +71,7 @@ class TestGeoNetworkConnector(unittest.TestCase):
         mock_response.raise_for_status.side_effect = requests.exceptions.HTTPError("404 Not Found")
         self.connector.session.get.return_value = mock_response
 
-        with self.assertRaises(Exception) as context:
+        with self.assertRaises(ConnectorError) as context:
             self.connector.get_record(uuid)
         
         self.assertIn("Error getting record invalid-uuid", str(context.exception))

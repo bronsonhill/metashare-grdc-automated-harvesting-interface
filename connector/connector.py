@@ -4,6 +4,10 @@ from typing import Dict, Any
 from abc import ABC, abstractmethod
 import json
 
+class ConnectorError(Exception):
+    """Custom exception for Connector errors."""
+    pass
+
 class ConnectorInterface(ABC):
     @abstractmethod
     def can_connect(self):
@@ -43,8 +47,7 @@ class GeoNetworkConnector(ConnectorInterface):
             response = self.session.get(url)
             response.raise_for_status()
             return True
-        except requests.exceptions.RequestException as e:
-            print(f"Failed to connect to GeoNetwork: {e}")
+        except requests.exceptions.RequestException:
             return False
 
     def search_records(self, query):
@@ -69,7 +72,7 @@ class GeoNetworkConnector(ConnectorInterface):
             response.raise_for_status()
             return response.text
         except requests.exceptions.RequestException as e:
-            raise Exception(f"Error getting record {uuid}: {e}")
+            raise ConnectorError(f"Error getting record {uuid}: {e}") from e
 
     def construct_query(self, since):
         # Initialize with a basic bool query structure that matches all documents
@@ -154,7 +157,7 @@ class GeoNetworkConnector(ConnectorInterface):
 
             return filtered_hits
         except requests.exceptions.RequestException as e:
-            raise Exception(f"Error searching for {query}: {e}")
+            raise ConnectorError(f"Error searching for {query}: {e}") from e
 
     def _get_records_xml(self, uuids):
         records = []

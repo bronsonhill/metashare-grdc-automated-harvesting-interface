@@ -1,1 +1,1 @@
-from .connector import ConnectorInterface, GeoNetworkConnector
+from .connector import ConnectorInterface, GeoNetworkConnector, ConnectorError

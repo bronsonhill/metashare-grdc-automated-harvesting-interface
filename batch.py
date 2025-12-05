@@ -1,4 +1,4 @@
-from connector import ConnectorInterface, GeoNetworkConnector 
+from connector import ConnectorInterface, GeoNetworkConnector, ConnectorError
 from validator import GeoNetworkValidator
 from notifications import NotificationService, FileNotificationBackend, BatchStats, InvalidRecordDetails
 from config import ConfigLoader
@@ -50,11 +50,19 @@ class BatchJob:
         
     def _get_delta_records(self):
         self.connection_success = self.connector.can_connect()
+        if not self.connection_success:
+            self.notifications.notify_connection_error("Failed to connect to GeoNetwork.")
+            return []
+
         try:
             query = self.connector.construct_query(self.since)
             self.search_hits = self.connector.search_records(query)
+        except ConnectorError as e:
+            self.notifications.notify_connection_error(str(e))
         except Exception as e:
-            self.notifications.notify_connection_error(e)
+            # Handle unexpected errors
+            print(f"Unexpected error during search: {e}")
+            self.notifications.notify_connection_error(f"Unexpected error: {e}")
         return self.search_hits
 
     def _set_since(self):
